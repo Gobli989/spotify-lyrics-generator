@@ -1,0 +1,222 @@
+:root {
+  --ff: Helvetica Neue, helvetica, arial, Hiragino Kaku Gothic Pro, Meiryo, MS Gothic, sans-serif;
+
+  --green: #1DB954;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff);
+
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+
+  background: linear-gradient(180deg, #696eff 0%, #f8acff 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+}
+
+input.search {
+  background-color: #fff;
+  border: none;
+  outline: none;
+  height: 42px;
+  width: 50vw;
+  font-size: 18px;
+  font-family: var(--ff);
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 0 12px;
+
+  text-align: center;
+}
+
+input.search.invalid {
+  outline: 2px solid red;
+}
+
+input.search.valid {
+  outline: 2px solid var(--green);
+}
+
+.btn {
+  width: 200px;
+  height: 42px;
+  font-family: var(--ff);
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  letter-spacing: 1px;
+  
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.2);
+  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+}
+
+.bg-spoty {
+  background-color: var(--green);
+  color: #fff;
+}
+
+.btn-finish {
+  width: 600px;
+  margin-bottom: 64px;
+}
+
+span.spinner {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-top: 4px solid var(--green);
+  animation: spin 1s linear infinite;
+}
+
+.lyrics {
+  margin-top: 64px;
+  width: 600px;
+  /* min-height: 600px; */
+
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 32px;
+
+  font-family: var(--ff);
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.lyrics-finished {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lyrics-finished p {
+  margin: 0;
+}
+
+.lyrics-finished .lyrics-dots {
+  color: #888;
+  font-size: 18px;
+}
+
+.lyrics-selector p {
+  color: #888;
+  cursor: pointer;
+  transition: color 100ms ease-in-out;
+}
+
+.lyrics-selector p:hover {
+  color: #555;
+  transition: color 100ms ease-in-out;
+}
+
+.lyrics-selector p.selected {
+  color: var(--green);
+  transition: color 100ms ease-in-out;
+}
+
+.text-container {
+  width: 100%;
+  height: 100%;
+  padding-right: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.spotify-logo-container {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.spotify-logo {
+  width: 100px;
+  height: 30px;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/FreeSans.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/Helvetica Neue Bold.otf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('fonts/Helvetica Neue Black.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+.settings {
+  width: 600px;
+}
+
+.settings > span {
+  margin-left: 6px;
+}
+
+.settings .row {
+  margin-top: 8px;
+}
+
+.settings input, .settings select {
+  margin-right: 8px;
+}
+
+input[type="text"], input[type="number"] {
+  width: 120px;
+  height: 24px;
+  border-radius: 10px;
+  padding: 0 5px;
+  border: 1px solid black;
+  outline: none;
+}
+
+select {
+  width: 120px;
+  height: 24px;
+  border-radius: 5px;
+  padding: 0 10px;
+  border: 1px solid black;
+  outline: none;
+
+  background-color: #fff;
+}
