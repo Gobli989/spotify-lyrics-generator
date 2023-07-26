@@ -67,7 +67,7 @@ input.search.valid {
   border: none;
   outline: none;
   letter-spacing: 1px;
-  
+
   box-shadow: 0 0 0px rgba(255, 255, 255, 0.2);
   transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
 }
@@ -99,7 +99,7 @@ span.spinner {
 }
 
 .lyrics {
-  margin-top: 64px;
+  margin-top: 12px;
   width: 600px;
   /* min-height: 600px; */
 
@@ -189,7 +189,7 @@ span.spinner {
   width: 600px;
 }
 
-.settings > span {
+.settings>span {
   margin-left: 6px;
 }
 
@@ -197,11 +197,13 @@ span.spinner {
   margin-top: 8px;
 }
 
-.settings input, .settings select {
+.settings input,
+.settings select {
   margin-right: 8px;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"],
+input[type="number"] {
   width: 120px;
   height: 24px;
   border-radius: 10px;
@@ -221,21 +223,65 @@ select {
   background-color: #fff;
 }
 
+.back-arrow {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--ff);
+  color: #fff;
+  margin-top: 32px;
+
+  width: 85%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.back-arrow:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 600px) {
+
+  body,
   .container {
-    padding: 0 12px;
+    overflow-x: hidden;
   }
 
-  .btn-finish {
-    width: 100%;
+  .container h1 {
+    text-align: center;
+  }
+
+  input.search {
+    width: 80vw;
   }
 
   .lyrics {
-    width: 100%;
+    width: 80vw;
+  }
+
+  .lyrics-selector p {
+    margin: 16px 0;
+    line-height: 1;
+    font-size: 24px;
   }
 
   .settings {
+    width: 95%;
+  }
+
+  .settings .row {
     width: 100%;
   }
+
+  .btn-finish {
+    width: 95%;
+  }
+
+  #finished-dom {
+    width: 600px;
+
+    transform: scale(0.5);
+  }
+
+  .back-arrow {}
 
 }

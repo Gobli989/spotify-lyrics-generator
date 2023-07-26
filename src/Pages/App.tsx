@@ -60,6 +60,17 @@ export default function App() {
 
     return <>
         <div className="container">
+
+        <div className="back-arrow" onClick={() => {
+            setReponse(null);
+            setSearching(false);
+            setSearch('');
+            setSelected([]);
+            setPage(1);
+        }}>
+            ← Back
+        </div>
+
             <div className="lyrics lyrics-selector">
                 {response?.lines?.map((line, i) => {
                     return <>
