@@ -23,10 +23,18 @@ export async function getLyricsFromURL(url: string): Promise<SResponse> {
 export function screenshotNode(node: HTMLElement, scale: number): Promise<string> {
     return new Promise<string>((resolve, reject) => {
 
+        // if on mobile
+        // if (window.innerWidth <= 600) {
+
+        // }
+
         html2canvas(node, {
             backgroundColor: null,
             scale: scale,
             imageTimeout: 0,
+            onclone(document, element) {
+                element.style.transform = 'none';
+            },
         })
             .then(canvas => resolve(canvas.toDataURL('image/png')))
             .catch(err => reject(err));
