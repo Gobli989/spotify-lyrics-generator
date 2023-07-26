@@ -220,3 +220,22 @@ select {
 
   background-color: #fff;
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .btn-finish {
+    width: 100%;
+  }
+
+  .lyrics {
+    width: 100%;
+  }
+
+  .settings {
+    width: 100%;
+  }
+
+}
