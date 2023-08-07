@@ -139,20 +139,21 @@ export default function App() {
                         gap: `${settings.gap}px`,
                         textAlign: settings.justifyText ? 'justify' : 'left'
                     }}>
-                        {selected.sort().map((num, i, arr) => {
-                            if (!response?.lines) return null;
+                        {selected.sort((a, b) => a - b).map((num, i, arr) => {
+                            console.log('selected:', selected);
+                            if (!response || !response.lines) return null;
 
                             if (settings.dotsBetweenFarLines) {
                                 if (i !== 0 && arr[i - 1] + 1 !== num) {
                                     return <>
                                         <p className='lyrics-dots'>[...]</p>
-                                        <p>{response?.lines[num].words}</p>
+                                        <p>{num} {response.lines[num].words}</p>
                                     </>;
                                 }
                             }
 
                             return <>
-                                <p>{response?.lines[num].words}</p>
+                                <p>{num} {response.lines[num].words}</p>
                             </>;
                         })}
                     </div>
